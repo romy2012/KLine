@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="public/css/base.css">
     <link rel="stylesheet" href="public/css/shCoreDefault.css">
     <link rel="stylesheet" href="public/css/demo.css">
-    <script type="text/javascript">
-        document.domain = 'sosobtc.com';
+    <!--<script type="text/javascript">
+        //  document.domain = 'sosobtc.com';
         // 没有后缀"/"结束，以方便更改端口
         //var WWW_SERVER = 'http://www.sosobtc.com';
         //var KLINE_SERVER = 'http://k.sosobtc.com';
         //var IO_SERVER = 'http://io.sosobtc.com/';
-    </script>
+    </script>-->
     <script src="public/js/jquery.js"></script>
     <script src="public/js/tool.js"></script>
     <script src="public/js/shCore.js"></script>
@@ -29,7 +29,46 @@
          * Dual licensed under the MIT and GPL licenses.
          * http://benalman.com/about/license/
          */
-        (function (b, c) { var $ = b.jQuery || b.Cowboy || (b.Cowboy = {}), a; $.throttle = a = function (e, f, j, i) { var h, d = 0; if (typeof f !== "boolean") { i = j; j = f; f = c } function g() { var o = this, m = +new Date() - d, n = arguments; function l() { d = +new Date(); j.apply(o, n) } function k() { h = c } if (i && !h) { l() } h && clearTimeout(h); if (i === c && m > e) { l() } else { if (f !== true) { h = setTimeout(i ? k : l, i === c ? e - m : e) } } } if ($.guid) { g.guid = j.guid = j.guid || $.guid++ } return g }; $.debounce = function (d, e, f) { return f === c ? a(d, e, false) : a(d, f, e !== false) } })(this);
+        (function(b, c) {
+            var $ = b.jQuery || b.Cowboy || (b.Cowboy = {}), a;
+            $.throttle = a = function(e, f, j, i) {
+                var h, d = 0;
+                if (typeof f !== "boolean") {
+                    i = j;
+                    j = f;
+                    f = c
+                }
+
+                function g() {
+                    var o = this, m = +new Date() - d, n = arguments;
+
+                    function l() {
+                        d = +new Date();
+                        j.apply(o, n)
+                    }
+
+                    function k() { h = c }
+
+                    if (i && !h) {
+                        l()
+                    }
+                    h && clearTimeout(h);
+                    if (i === c && m > e) {
+                        l()
+                    } else {
+                        if (f !== true) {
+                            h = setTimeout(i ? k : l, i === c ? e - m : e)
+                        }
+                    }
+                }
+
+                if ($.guid) {
+                    g.guid = j.guid = j.guid || $.guid++
+                }
+                return g
+            };
+            $.debounce = function(d, e, f) { return f === c ? a(d, e, false) : a(d, f, e !== false) }
+        })(this);
 
         SyntaxHighlighter.config.tagName = 'textarea';
     </script>
@@ -38,7 +77,7 @@
     <div class="wrap">
         <div class="plugin-list">
             <div class="plugin-item">
-                <h1><a name="new_kline">实时K线插件</a></h1>
+                <!--<h1><a name="new_kline">实时K线插件</a></h1>-->
                 <div id="kline_container" style="width: 100%; height: 560px;"></div>
                 <div id="kline_usage" class="clearfix">
                     <div id="kline_config">
@@ -113,13 +152,13 @@
                     //<![CDATA[
                     (function () {
                         var defaultOptions = {
-                            symbol: 'BTC:OKCOIN',
-                            default_step: 900,
-                            default_theme: 'dark',
-                            disable_theme_change: true,
-                            default_open_tools: false,
-                            hide_logo: true,
-                            container: 'kline_container'
+                            symbol: 'BTC:OKCOIN',  //选择K线图显示数据的交易平台及虚拟币类型
+                            default_step: 900,  //默认周期，秒
+                            default_theme: 'dark',  //默认主题
+                            disable_theme_change: true,  //默认关闭主题切换
+                            default_open_tools: false,  //默认关闭画图工具
+                            //hide_logo: true,  //默认隐藏LOGO
+                            container: 'kline_container'  //容器
                         };
 
                         var options = $.extend({}, defaultOptions);
@@ -132,7 +171,7 @@
                             className: 'kline-embed-code'
                         };
 
-                        var Widget = SOSOBTC.widget;
+                        var Widget = QIAO.widget;
 
                         var $widget = new Widget(options);
 
@@ -233,12 +272,12 @@
                                 '    src="public/js/sb.js"\n',
                                 '><\/script>\n',
                                 '<script type="text/javascript">\n',
-                                '    new SOSOBTC.widget(',
+                                '    new QIAO.widget(',
                                 JSON.stringify(options, function (key, value) {
                                     if (key === 'default_open_tools' && value !== true
                                         || key === 'disable_theme_change' && value !== true
-                                        || key === 'hide_logo' && value !== true
-                                        || key === 'default_step' && value === 900) {
+                                        //|| key === 'hide_logo' && value === true
+                                        || key === 'container' && value === 'kline_container') {
                                         return undefined;
                                     }
                                     return value;
