@@ -1,5 +1,8 @@
 "use strict";
-!function() {
+!function () {
+
+    debugger;
+
     if (!window.QIAO || !window.QIAO.widget) {
         var e = {
             host: "https://www.sosobtc.com",
@@ -58,8 +61,16 @@
 
 
                 var t, o = this.render(), r = this;
-                n(o, this.options.container), t = e.$(this.id), e.bindEvent(t, "load", function () { r._ready = !0 }
-                    )
+                // n(o, this.options.container), t = e.$(this.id), e.bindEvent(t, "load", function () { r._ready = !0 })
+
+
+                debugger;
+                n(o, this.options.container);
+                t = e.$(this.id);
+                e.bindEvent(t, "load", function () { r._ready = !0 })
+
+
+
             },
             ready: function(e) { this._ready ? e.call(this) : this._ready_handlers.push(e) },
             render: function() {
@@ -129,6 +140,9 @@
             var o = e.$(t);
             o ? o.innerHTML = n : document.write(n)
         };
+
+        debugger;
+
         window.QIAO && jQuery ? jQuery.extend(window.QIAO, e) : window.QIAO = e
     }
 }();

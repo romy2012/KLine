@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KLine", "KLine", "{BB70EB8C-D9C1-4D2E-BD35-74ACC29E6A3F}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,19 +12,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Public", "Public", "{8DBEE0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{9C79B1D0-F407-47BD-92ED-439BF11ADB90}"
 	ProjectSection(SolutionItems) = preProject
-		jquery.js = jquery.js
-		sb.js = sb.js
-		shBrushJScript.js = shBrushJScript.js
-		shBrushXml.js = shBrushXml.js
-		shCore.js = shCore.js
-		tool.js = tool.js
+		public\js\jquery.js = public\js\jquery.js
+		public\js\sb.js = public\js\sb.js
+		public\js\shBrushJScript.js = public\js\shBrushJScript.js
+		public\js\shBrushXml.js = public\js\shBrushXml.js
+		public\js\shCore.js = public\js\shCore.js
+		public\js\tool.js = public\js\tool.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{1345B2F9-66FC-4CC3-9BC2-CC4B1FE353D5}"
 	ProjectSection(SolutionItems) = preProject
-		base.css = base.css
-		demo.css = demo.css
-		shCoreDefault.css = shCoreDefault.css
+		public\css\base.css = public\css\base.css
+		public\css\demo.css = public\css\demo.css
+		public\css\shCoreDefault.css = public\css\shCoreDefault.css
 	EndProjectSection
 EndProject
 Global
