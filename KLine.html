@@ -29,14 +29,14 @@
          * Dual licensed under the MIT and GPL licenses.
          * http://benalman.com/about/license/
          */
-        (function(b, c) {
+        (function (b, c) {
             var $ = b.jQuery || b.Cowboy || (b.Cowboy = {}), a;
-            $.throttle = a = function(e, f, j, i) {
+            $.throttle = a = function (e, f, j, i) {
                 var h, d = 0;
                 if (typeof f !== "boolean") {
                     i = j;
                     j = f;
-                    f = c
+                    f = c;
                 }
 
                 function g() {
@@ -44,30 +44,30 @@
 
                     function l() {
                         d = +new Date();
-                        j.apply(o, n)
+                        j.apply(o, n);
                     }
 
                     function k() { h = c }
 
                     if (i && !h) {
-                        l()
+                        l();
                     }
                     h && clearTimeout(h);
                     if (i === c && m > e) {
-                        l()
+                        l();
                     } else {
                         if (f !== true) {
-                            h = setTimeout(i ? k : l, i === c ? e - m : e)
+                            h = setTimeout(i ? k : l, i === c ? e - m : e);
                         }
                     }
                 }
 
                 if ($.guid) {
-                    g.guid = j.guid = j.guid || $.guid++
+                    g.guid = j.guid = j.guid || $.guid++;
                 }
-                return g
+                return g;
             };
-            $.debounce = function(d, e, f) { return f === c ? a(d, e, false) : a(d, f, e !== false) }
+            $.debounce = function (d, e, f) { return f === c ? a(d, e, false) : a(d, f, e !== false) }
         })(this);
 
         SyntaxHighlighter.config.tagName = 'textarea';
@@ -82,14 +82,12 @@
                 <div id="kline_usage" class="clearfix">
                     <div id="kline_config">
                         <h2>配置插件</h2>
-
                         <div class="widget-column">
                             <div class="row">
                                 <div class="item">
                                     <label for="symbol">行情标识：</label>
                                     <input type="text" id="symbol" value="BTC:OKCOIN">
                                 </div>
-
                                 <div class="item">
                                     <label for="step">默认周期：</label>
                                     <select name="step" id="step">
@@ -109,7 +107,6 @@
                                         <option value="604800">周线</option>
                                     </select>
                                 </div>
-
                                 <div class="item">
                                     <label for="theme">主题色调：</label>
                                     <select name="theme" id="theme">
@@ -119,31 +116,25 @@
                                     </select>
                                 </div>
                             </div>
-
                             <!--<div class="row switch">
                                 <label for="logo_switch">
                                     <input type="checkbox" name="logo_switch" id="logo_switch">隐藏LOGO
                                 </label>
                             </div>-->
-
                             <div class="row switch">
                                 <label for="theme_switch"><input type="checkbox" name="theme_switch" id="theme_switch" checked>关闭主题切换</label>
                             </div>
-
                             <div class="row switch">
                                 <label for="tools_switch"><input type="checkbox" name="tools_switch" id="tools_switch">默认打开画图工具</label>
                             </div>
-
                             <div class="row buttons">
                                 <button id="kline_apply">应用</button>
                                 <button id="kline_reset">重置</button>
                             </div>
                         </div>
                     </div>
-
                     <div id="kline_embed_code">
                         <h2>引用代码</h2>
-
                         <div class="widget-column no-padding" id="kline_embed_code_container"></div>
                     </div>
                 </div>
@@ -160,11 +151,7 @@
                             //hide_logo: true,  //默认隐藏LOGO
                             container: 'kline_container'  //容器
                         };
-
-                        debugger;
-
                         var options = $.extend({}, defaultOptions);
-
                         var highlightOptions = {
                             brush: 'js',
                             gutter: false,
@@ -172,17 +159,10 @@
                             tabSize: 2,
                             className: 'kline-embed-code'
                         };
-
                         var Widget = QIAO.widget;
-
                         var $widget = new Widget(options);
-
-                        debugger;
-
                         var $klineEmbedCodeContainer = $('#kline_embed_code_container');
-
                         $klineEmbedCodeContainer.html(render(options));
-
                         var $symbol = $('#symbol'),
                             $step = $('#step'),
                             $theme = $('#theme'),
@@ -191,31 +171,24 @@
                             $tools_switch = $('#tools_switch'),
                             $btnApply = $('#kline_apply'),
                             $btnReset = $('#kline_reset');
-
                         $symbol.on('input', $.debounce(500, function (event) {
                             $.extend(options, {
                                 symbol: $(this).val().toUpperCase()
                             });
-
                             refreshCode(options);
                         }));
-
                         $step.on('change', $.debounce(100, function (event) {
                             $.extend(options, {
                                 default_step: parseInt($(this).val())
                             });
-
                             refreshCode(options);
                         }));
-
                         $theme.on('change', $.debounce(100, function (event) {
                             $.extend(options, {
                                 default_theme: $(this).val()
                             });
-
                             refreshCode(options);
                         }));
-
                         //$logo_switch.on('change', $.debounce(250, function (event) {
                         //    $.extend(options, {
                         //        hide_logo: $(this).is(':checked')
@@ -223,28 +196,22 @@
 
                         //    refreshCode(options);
                         //}));
-
                         $theme_switch.on('change', $.debounce(250, function (event) {
                             $.extend(options, {
                                 disable_theme_change: $(this).is(':checked')
                             });
-
                             refreshCode(options);
                         }));
-
                         $tools_switch.on('change', $.debounce(250, function (event) {
                             $.extend(options, {
                                 default_open_tools: $(this).is(':checked')
                             });
-
                             refreshCode(options);
                         }));
-
                         $btnApply.on('click', function () {
                             $widget.remove();
                             $widget = new Widget(options);
                         });
-
                         $btnReset.on('click', function () {
                             $.extend(options, defaultOptions);
                             $symbol.val(options.symbol);
@@ -252,22 +219,15 @@
                             $theme.val(options.default_theme);
                             $theme_switch.attr('checked', options.disable_theme_change);
                             $tools_switch.attr('checked', options.default_open_tools);
-
-
                             //$logo_switch.attr('checked', options.hide_logo);
-
-
                             refreshCode(options);
                             $widget.remove();
                             $widget = new Widget(options);
                         });
-
-
                         function refreshCode(options) {
                             $klineEmbedCodeContainer.html(render(options));
                             return SyntaxHighlighter.highlight(highlightOptions, $klineEmbedCodeContainer.children()[0]);
                         }
-
                         function render(options) {
                             return [
                                 '<textarea class="brush:js; gutter: false; toolbar: false; tab-size: 2; class-name: \'kline-embed-code\'" id="embed_code" readonly="readonly">\n',
@@ -301,5 +261,32 @@
     <script type="text/javascript">
         SyntaxHighlighter.highlight();
     </script>
+
+    <!--http://www.jb51.net/article/51140.htm-->
+    <script type="text/javascript">
+        window.onload = function () {
+
+            debugger;
+
+            var s = document.getElementById('zx');
+
+            var ssss = document.getElementById('zx').contentDocument || document.frames['zx'].document;;
+
+            //window.parent.iframeCall();
+
+            //window.parent.callparentFunctoin();
+
+            var userName = "xiaoming";
+
+            alert(userName);
+
+            //document.getElementById('zx').onload=function(){
+            //    //your codes here.
+            //    debugger;
+
+            //};
+        }
+    </script>
+
 </body>
 </html>
