@@ -51,6 +51,7 @@
         };
         e.widget.prototype = {
             create: function () {
+                var t, o = this.render(), r = this;
                 n(o, this.options.container);
                 t = e.$(this.id);
                 e.bindEvent(t, "load", function () { r._ready = !0 })
@@ -62,7 +63,6 @@
             },
             generateUrl: function (n) {
                 function t(e, t, o) { return o = o || e, n[e] ? "&" + o + "=" + t : "" }
-
                 n = n || this.options;
                 var o = "/widget/",
                     r = e.host,
