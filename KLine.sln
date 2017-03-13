@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{9C79B1D0-F407-
 		public\js\shBrushXml.js = public\js\shBrushXml.js
 		public\js\shCore.js = public\js\shCore.js
 		public\js\tool.js = public\js\tool.js
+		public\js\vendor.js = public\js\vendor.js
+		public\js\widget.js = public\js\widget.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{1345B2F9-66FC-4CC3-9BC2-CC4B1FE353D5}"
@@ -26,6 +28,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{1345B2F9-66F
 		public\css\base.css = public\css\base.css
 		public\css\demo.css = public\css\demo.css
 		public\css\shCoreDefault.css = public\css\shCoreDefault.css
+		public\css\widget.css = public\css\widget.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Widget", "Widget", "{218A21B2-EBE0-411C-876D-AB82AE3B6DFB}"
+	ProjectSection(SolutionItems) = preProject
+		widget\Widget.html = widget\Widget.html
 	EndProjectSection
 EndProject
 Global
@@ -36,5 +44,6 @@ Global
 		{8DBEE0D7-1E4E-49F3-BA2A-1A28BAA07053} = {BB70EB8C-D9C1-4D2E-BD35-74ACC29E6A3F}
 		{9C79B1D0-F407-47BD-92ED-439BF11ADB90} = {8DBEE0D7-1E4E-49F3-BA2A-1A28BAA07053}
 		{1345B2F9-66FC-4CC3-9BC2-CC4B1FE353D5} = {8DBEE0D7-1E4E-49F3-BA2A-1A28BAA07053}
+		{218A21B2-EBE0-411C-876D-AB82AE3B6DFB} = {BB70EB8C-D9C1-4D2E-BD35-74ACC29E6A3F}
 	EndGlobalSection
 EndGlobal

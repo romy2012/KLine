@@ -2,7 +2,8 @@
 !function () {
     if (!window.QIAO || !window.QIAO.widget) {
         var e = {
-            host: "https://www.sosobtc.com",
+            //host: "https://www.sosobtc.com",
+            host: "",
             $: function (e) { return document.getElementById(e) },
             uid: function () { return "qiao_" + (1048576 * (1 + Math.random()) | 0).toString(16).substring(1) },
             onready: function (e) { window.addEventListener ? window.addEventListener("DOMContentLoaded", e, !1) : window.attachEvent("onload", e) },
@@ -62,17 +63,20 @@
                 return '<iframe id="' + "zx" + '" src="' + e + '" frameborder="0" allowTransparency="true" scrolling="no" allowfullscreen style="width: 100%; height: 100%;"></iframe>'
             },
             generateUrl: function (n) {
-                function t(e, t, o) { return o = o || e, n[e] ? "&" + o + "=" + t : "" }
-                n = n || this.options;
-                var o = "/widget/",
-                    r = e.host,
-                    i = e.urlBuilderFunction([
-                        {
-                            name: "website",
-                            value: r + o + "?symbol=" + encodeURIComponent(n.symbol) + t("default_step", n.default_step) + t("default_theme", n.default_theme) + t("disable_theme_change", n.disable_theme_change) + t("default_open_tools", n.default_open_tools) + t("hide_logo", true)
-                        }, { name: "utm_source", value: "xtjt.me" }, { name: "utm_medium", value: "xtjt.me" }, { name: "utm_campaign", value: "widget" }
-                    ]);
-                return i
+                //function t(e, t, o) { return o = o || e, n[e] ? "&" + o + "=" + t : "" }
+                //n = n || this.options;
+                //var o = "/widget/",
+                //    r = e.host,
+                //    i = e.urlBuilderFunction([
+                //        {
+                //            name: "website",
+                //            value: r + o + "?symbol=" + encodeURIComponent(n.symbol) + t("default_step", n.default_step) + t("default_theme", n.default_theme) + t("disable_theme_change", n.disable_theme_change) + t("default_open_tools", n.default_open_tools) + t("hide_logo", true)
+                //        }, { name: "utm_source", value: "xtjt.me" }, { name: "utm_medium", value: "xtjt.me" }, { name: "utm_campaign", value: "widget" }
+                //    ]);
+                //return i
+
+                return "widget/Widget.html";
+
             },
             remove: function () {
                 var n = e.$(this.id);

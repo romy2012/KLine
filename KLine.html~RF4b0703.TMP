@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="public/css/shCoreDefault.css">
     <link rel="stylesheet" href="public/css/demo.css">
     <!--<script type="text/javascript">
-          document.domain = 'sosobtc.com';
+        //  document.domain = 'sosobtc.com';
         // 没有后缀"/"结束，以方便更改端口
-        var WWW_SERVER = 'http://www.sosobtc.com';
-        var KLINE_SERVER = 'http://k.sosobtc.com';
-        var IO_SERVER = 'http://io.sosobtc.com/';
+        //var WWW_SERVER = 'http://www.sosobtc.com';
+        //var KLINE_SERVER = 'http://k.sosobtc.com';
+        //var IO_SERVER = 'http://io.sosobtc.com/';
     </script>-->
     <script src="public/js/jquery.js"></script>
     <script src="public/js/tool.js"></script>
